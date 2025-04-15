@@ -4,8 +4,8 @@ import "./App.css";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchContacts } from "./redux/contactsOps";
-import Navigation from "./components/Navigation/Navigation";
+import { fetchContacts } from "./redux/contacts/operations";
+
 import Layout from "./components/Layout/Layout";
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
   return (
     <>
       <Layout>
-        <Navigation />
         <ContactForm />
         <SearchBox />
         <ContactList />
