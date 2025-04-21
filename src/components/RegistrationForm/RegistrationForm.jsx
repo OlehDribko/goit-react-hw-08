@@ -4,7 +4,7 @@ import { Formik, Form, Field } from "formik";
 import css from "./RegistrationForm.module.css";
 
 const RegistrationForm = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
     dispatch(register(values));
     actions.resetForm();
@@ -19,7 +19,7 @@ const RegistrationForm = () => {
       }}
       onSubmit={handleSubmit}
     >
-      <Form className={css.form} autoComplete="off">
+      <Form className={css.form}>
         <label className={css.label}>
           Username
           <Field type="text" name="name" />

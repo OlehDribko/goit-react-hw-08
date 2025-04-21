@@ -1,23 +1,27 @@
-import { Field, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-
+import { logIn } from "../../redux/auth/operations";
+import css from "./LoginForm.module.css";
 const LoginForm = () => {
   const dispatch = useDispatch();
   const hendleSubmit = (value, actions) => {
-    dispatch();
+    dispatch(logIn(value));
+    actions.resetForm();
   };
 
   return (
     <Formik initialValues={{ email: "", password: "" }} onSubmit={hendleSubmit}>
-      <form action="">
-        <label type="email" name="email">
-          email <Field type="email" name="email" />
+      <Form className={css.form}>
+        <label className={css.label}>
+          Email
+          <Field type="email" name="email" />
         </label>
-        <label type="password" name="password">
-          password <Field type="password" name="password" />
+        <label className={css.label}>
+          Password
+          <Field type="password" name="password" />
         </label>
         <button type="submit">Log in</button>
-      </form>
+      </Form>
     </Formik>
   );
 };

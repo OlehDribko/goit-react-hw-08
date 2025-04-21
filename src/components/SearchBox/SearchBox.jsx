@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import style from "./SearchBox.module.css";
-import { changeFilter } from "../../redux/filtersSlice";
+import { changeFilter } from "../../redux/filters/slice";
 import { useSelector } from "react-redux";
 import { selectFilter } from "../../redux/contacts/slice";
 
