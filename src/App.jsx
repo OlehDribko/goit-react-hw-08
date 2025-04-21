@@ -6,15 +6,15 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import { isRefreshing } from "./redux/auth/selectors";
 import { refreshUser } from "./redux/auth/operations";
-import { RestrictedRoute } from "./page/RestrictedRoute/RestrictedRoute";
-import { PrivateRoute } from "./page/PrivateRoute/PrivateRoute";
+import { RestrictedRoute } from "./pages/RestrictedRoute/RestrictedRoute";
+import { PrivateRoute } from "./pages/PrivateRoute/PrivateRoute";
 import { Toaster } from "react-hot-toast";
-const PageContacts = lazy(() => import("./page/PageContacts/PageContacts"));
+const PageContacts = lazy(() => import("./pages/PageContacts/PageContacts"));
 const RegistrationPage = lazy(() =>
-  import("./page/RegistrationPage/RegistrationPage")
+  import("./pages/RegistrationPage/RegistrationPage")
 );
-const LoginPage = lazy(() => import("./page/LoginPage/LoginPage"));
-const HomePage = lazy(() => import("./page/HomePage/HomePage"));
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 
 function App() {
   const dispatch = useDispatch();
